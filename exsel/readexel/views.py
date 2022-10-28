@@ -44,7 +44,7 @@ def index(request):
         # Free_or_Paid = models.CharField(max_length=350, blank=True, null=True, default=None)
         # Ticket_site_link = models.URLField(max_length=3
 
-        return HttpResponse("qwertyuio")
+        return HttpResponse("your model is already in the database go to https://yan3608.pythonanywhere.com/admin (login: yan password: 390871) and make sure. And remove empty values rom the table. there are a thousand empty values")
     else:
         return render(request, "readexel/index.html", {'form': NewLotForm})
 
