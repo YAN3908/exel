@@ -22,14 +22,16 @@ def index(request):
         # Iterate the loop to read the cell values
         for rows in worksheet.iter_rows(2, worksheet.max_row):
             print(rows[0].value)
-
-            book = Book.objects.create(photo_link=rows[0].value, name_of_event=rows[1].value, date_of_event=rows[2].value,
-                                       description=rows[3].value, start_time=rows[4].value, end_time=rows[5].value,
-                                       location_name=rows[6].value, first_event_category=rows[7].value,
-                                       second_category=rows[8].value, free_or_Paid=rows[9].value,
-                                       ticket_site_link=rows[10].value,
-                                       )
-            book.save()
+            if rows[0].value !=None and rows[1].value !=None and rows[2].value !=None:
+                book = Book.objects.create(photo_link=rows[0].value, name_of_event=rows[1].value, date_of_event=rows[2].value,
+                                           description=rows[3].value, start_time=rows[4].value, end_time=rows[5].value,
+                                           location_name=rows[6].value, first_event_category=rows[7].value,
+                                           second_category=rows[8].value, free_or_Paid=rows[9].value,
+                                           ticket_site_link=rows[10].value,
+                                           )
+                book.save()
+            else:
+                break
         # for i in range(0, worksheet.max_row):
         #     for col in worksheet.iter_cols(1, worksheet.max_column):
         #         print(col[i].value)
