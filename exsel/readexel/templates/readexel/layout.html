@@ -9,7 +9,7 @@
     </head>
     <body>
     <a class="nav-link" href="{% url 'index' %}">
-        <h1>SPA project</h1>
+        <h1>control internet addiction.</h1>
     </a>
         <div>
             {% if user.is_authenticated %}
@@ -19,8 +19,11 @@
             {% endif %}
         </div>
         <ul class="nav">
-
+<li class="nav-item">
+                    <a class="nav-link" href="/admin">Admin</a>
+                </li>
             {% if user.is_authenticated %}
+
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
                 </li>
